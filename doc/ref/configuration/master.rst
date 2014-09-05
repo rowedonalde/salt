@@ -810,12 +810,7 @@ Master File Server Settings
 ``fileserver_backend``
 ----------------------
 
-Default:
-
-.. code-block:: yaml
-
-    fileserver_backend:
-      - roots
+Default: ``['roots']``
 
 Salt supports a modular fileserver backend system, this system allows the salt
 master to link directly to third party systems to gather and manage the files
@@ -975,8 +970,6 @@ Walkthrough <gitfs-per-remote-config>`.
 ******************
 
 .. versionadded:: 2014.7.0
-
-Default: ``gitpython``
 
 Specify the provider to be used for gitfs. More information can be found in the
 :ref:`Gitfs Walkthrough <gitfs-dependencies>`.
@@ -1758,6 +1751,21 @@ Default: ``None``
           inventory_base_uri: /etc/reclass
 
 There are additional details at :ref:`salt-pillars`
+
+.. conf_master:: ext_pillar_first
+
+``ext_pillar_first``
+--------------------
+
+The ext_pillar_first option allows for external pillar sources to populate
+before file system pillar. This allows for targeting file system pillar from
+ext_pillar.
+
+Default: ``False``
+
+.. code-block:: yaml
+
+    ext_pillar_first: False
 
 .. conf_master:: pillar_source_merging_strategy
 
